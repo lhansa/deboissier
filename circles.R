@@ -9,7 +9,7 @@
 library(jasmines)
 library(dplyr)
 
-use_seed(1) %>%
+df1 <- use_seed(1) %>%
   scene_discs(
     rings = 3, points = 5000, size = 5
   ) %>%
@@ -22,10 +22,30 @@ use_seed(1) %>%
   unfold_tempest(
     iterations = 20,
     scale = .01
-  ) %>%
+  )
+
+df1 %>% 
   style_ribbon(
     palette = palette_named("vik"),
     colour = "ind",
     alpha = c(.1,.1),
     background = "oldlace"
+  )
+
+df1 %>% 
+  style_ribbon(
+    palette = palette_named("vik"),
+    colour = "ind",
+    alpha = c(.1,.1),
+    background = "oldlace", 
+    type = "point"
+  )
+
+x %>% 
+  style_ribbon(
+    palette = palette_named("vik"),
+    colour = "ind",
+    alpha = c(.1,.1),
+    background = "oldlace", 
+    type = "curve"
   )
